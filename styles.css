@@ -6,6 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+
 }
 
 .container {
@@ -14,38 +15,92 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("bg.jpg");
+    background-size:100%, auto, contain;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
 }
 
 h1 {
     margin-bottom: 20px;
 }
 
-#question {
-    font-size: 1.5em;
+.quiz-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    width: 100%;
+    margin-top: 15%;
     margin-bottom: 20px;
+}
+
+.question-row {
+    display: flex;
+    align-items: center; /* Vertically center the question and button */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.question-container {
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
+    text-align: left;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 20px; 
 }
 
 #options {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    grid-template-columns: 1fr 1fr; /* Two columns */
     grid-template-rows: auto auto; /* Two rows */
-    gap: 10px; /* Space between grid items */
-    max-width: 600px; /* Optional: limit the width */
-    margin: 0 auto; /* Center the grid */
+    gap: 10px 30px; /* 10px vertical gap, 30px horizontal gap */
+    width: calc(100% - 80px); /* Full width minus 40px margin on each side */
+    margin: 0 40px; /* 40px margin on left and right */
+    min-height: 100px; /* Ensure visibility */
 }
 
 .option {
-    padding: 15px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    background-color: #ffffff;
+    color: black;
+    height: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border: 2px solid #8b4513;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: #fff;
     transition: all 0.3s;
-    text-align: center; /* Center text in each option */
+    text-align: left;
+    font-size: 1 em;
+    display: flex;
+    align-items: center;
+}
+
+.option span:first-child {
+    margin-right: 10px; /* Space between letter and text */
 }
 
 .option:hover {
-    background-color: #e0e0e0;
+    background-color: #deb887;
 }
 
 .option.correct {
@@ -61,14 +116,14 @@ h1 {
 }
 
 #next-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-size: 1em;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 #next-btn:disabled {

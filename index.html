@@ -8,10 +8,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>HPMA 魔法史自主練習</h1>
-        <div id="question"></div>
-        <div id="options"></div>
-        <button id="next-btn" disabled>下一題</button>
+        <div id="score" style="color:white;">對題: 0/0</div>
+        <h1 style="color:white;">HPMA 魔法史自主練習</h1>
+        <div class="quiz-area">
+            <div class="question-row">
+                <div class="question-container">
+                    <div id="question"></div>
+                </div>
+                <button id="next-btn" disabled>下一題</button>
+            </div>
+            <div id="options"></div>
+        </div>
+        
     </div>
     <script src="quizData.js"></script>
     <script src="script.js"></script>
